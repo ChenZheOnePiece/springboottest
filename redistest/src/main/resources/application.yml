@@ -1,34 +1,36 @@
 
+#spring:
+#  redis:
+#    lettuce:
+#      pool:
+#        max-active: 500
+#        max-idle: 500
+#        max-wait: -1
+#        min-idle: 10
+#    port: 6379
+#    host: 172.18.0.7
+#server:
+#  tomcat:
+#    accept-count: 500
+#    max-threads: 500
+#    max-connections: 1000
+#    min-spare-threads: 100
+
+
 spring:
   redis:
-    lettuce:
+    jedis:
       pool:
         max-active: 500
         max-idle: 500
         max-wait: -1
         min-idle: 10
     port: 6379
-    host: 172.18.0.7
+#è¿™ä¸ªé…ç½®ä¼šå¿«ä¸€ç‚¹
 server:
-  tomcat:
-    accept-count: 500
-    max-threads: 500
-    max-connections: 1000
-    min-spare-threads: 100
   port: 8886
-
-#spring:
-#  redis:
-#    jedis:
-#      pool:
-#        #×î´óÁ¬½ÓÊı¾İ¿âÁ¬½ÓÊı,Éè 0 ÎªÃ»ÓĞÏŞÖÆ
-#        max-active: 500
-#        #×î´óµÈ´ıÁ¬½ÓÖĞµÄÊıÁ¿,Éè 0 ÎªÃ»ÓĞÏŞÖÆ
-#        max-idle: 500
-#        #×î´ó½¨Á¢Á¬½ÓµÈ´ıÊ±¼ä¡£Èç¹û³¬¹ı´ËÊ±¼ä½«½Óµ½Òì³£¡£ÉèÎª-1±íÊ¾ÎŞÏŞÖÆ¡£
-#        max-wait: -1
-#        #×îĞ¡µÈ´ıÁ¬½ÓÖĞµÄÊıÁ¿,Éè 0 ÎªÃ»ÓĞÏŞÖÆ
-#        min-idle: 10
-#    port: 6379
-#    host: 172.18.0.7
-#    password: 123456
+  tomcat:
+    accept-count: 100
+    max-threads: 60
+    max-connections: 500
+    min-spare-threads: 50
